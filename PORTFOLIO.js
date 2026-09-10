@@ -160,6 +160,7 @@ const initialData = {
     { title: "Deloitte Australia Tech Consulting Certificate", issuer: "Forage", year: "2024" },
     { title: "Python for Data Science & AI", issuer: "Cognitive Class", year: "2024" }
   ]
+  
 };
 export default function App() {
   const [data, setData] = useState(() => {
