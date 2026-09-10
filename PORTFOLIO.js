@@ -38,7 +38,7 @@ const initialData = {
     title: "Computer Engineering Student | Software & AI Developer | Graphic Designer",
     tagline: "Building intelligent web systems, machine learning models, and intuitive digital experiences.",
     location: "Pune, Maharashtra, India",
-    email: "aadityaraj.dev@example.com",
+    email: "adityarajds0315@gmail.com",
     github: "https://github.com",
     linkedin: "https://linkedin.com/in",
     education: {
