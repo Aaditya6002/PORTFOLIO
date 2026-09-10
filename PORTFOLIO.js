@@ -45,8 +45,8 @@ const initialData = {
       degree: "Bachelor of Engineering (BE) in Computer Engineering",
       institution: "Bharati Vidyapeeth's College of Engineering, Lavale",
       university: "Savitribai Phule Pune University (SPPU)",
-      year: "2023 - 2027 (Expected)",
-      gpa: "8.8 / 10.0"
+      year: "2024 - 2028",
+      gpa: "7.76 / 10.0"
     },
     bio: "Passionate Computer Engineering undergrad with strong skills spanning full-stack web architectures, AI/ML pipelines, subnetting/networking, and graphic design. Actively involved in campus technical communities and hackathons."
   },
