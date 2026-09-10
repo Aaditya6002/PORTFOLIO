@@ -179,3 +179,8 @@ export default function App() {
     localStorage.setItem('aaditya_portfolio_data', JSON.stringify(data));
   }, [data]);
 }
+// Command Line Terminal Simulation State
+  const [terminalInput, setTerminalInput] = useState('');
+  const [terminalHistory, setTerminalHistory] = useState([
+    { type: 'sys', text: 'Welcome to Aaditya Raj CLI v2.6.0. Type "help" or "ls" to view available commands.' },
+  ]);
