@@ -51,10 +51,10 @@ const initialData = {
     bio: "Passionate Computer Engineering undergrad with strong skills spanning full-stack web architectures, AI/ML pipelines, subnetting/networking, and graphic design. Actively involved in campus technical communities and hackathons."
   },
   stats: {
-    projectsCount: "12+",
+    projectsCount: "3+",
     techSkillsCount: "25+",
     certificationsCount: "6",
-    hackathonsCount: "4+"
+    hackathonsCount: "2+"
   },
   skills: [
     { name: "Python", category: "Languages", level: 90, primary: true },
@@ -95,22 +95,6 @@ const initialData = {
         "Architected relational DB schema for multi-tenant property hierarchies.",
         "Integrated dynamic invoice PDF/receipt export engine.",
         "Built modular backend logic for rapid data queries and search filters."
-      ],
-      github: "https://github.com",
-      demo: "",
-      featured: true
-    },
-    {
-      id: "net-sim",
-      title: "Subnetting & Network Architecture Simulation",
-      category: "Networking & Security",
-      summary: "VLSM network topology design, static/dynamic routing, and local DNS Lookup configuration in Cisco Packet Tracer.",
-      description: "Designed multi-router network topologies implementing Variable Length Subnet Masking (VLSM) to optimize IP address allocation. Configured DHCP, DNS servers, and dynamic routing protocols to mimic enterprise infrastructure.",
-      tech: ["Cisco Packet Tracer", "Networking Protocols", "IPv4 / Subnetting", "DNS / DHCP"],
-      highlights: [
-        "Configured subnet tables reducing IP waste by over 35%.",
-        "Simulated end-to-end packet ICMP traversals and DNS resolution setups.",
-        "Created comprehensive documentation and diagnostic test runs."
       ],
       github: "https://github.com",
       demo: "",
