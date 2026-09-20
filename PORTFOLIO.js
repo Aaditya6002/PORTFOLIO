@@ -184,3 +184,73 @@ export default function App() {
   const [terminalHistory, setTerminalHistory] = useState([
     { type: 'sys', text: 'Welcome to Aaditya Raj CLI v2.6.0. Type "help" or "ls" to view available commands.' },
   ]);
+const handleTerminalSubmit = (e) => {
+    e.preventDefault();
+    const cmd = terminalInput.trim().toLowerCase();
+    if (!cmd) return;
+    const newHistory = [...terminalHistory, { type: 'user', text: `aaditya@portfolio:~$ ${terminalInput}` }];
+    switch (cmd) {
+      case 'help':
+        newHistory.push({
+          type: 'sys',
+          text: 'Available commands:\n - bio       : Display short personal summary\n - skills    : List core technical competencies\n - projects  : Display featured engineering projects\n - edu       : Display education details\n - contact   : Print contact links\n - clear     : Clear terminal history'
+        });
+        break;
+      case 'bio':
+        newHistory.push({ type: 'sys', text: `${data.profile.name} - ${data.profile.title}\n${data.profile.bio}` });
+        break;
+      case 'skills':
+        const topSkills = data.skills.filter(s => s.primary).map(s => s.name).join(', ');
+        newHistory.push({ type: 'sys', text: `Key Skills:\n${topSkills}` });
+        break;
+      case 'projects':
+        const projList = data.projects.map(p => `• [${p.category}] ${p.title}`).join('\n');
+        newHistory.push({ type: 'sys', text: `Projects:\n${projList}` });
+        break;
+      case 'edu':
+        newHistory.push({
+          type: 'sys',
+          text: `${data.profile.education.degree}\n${data.profile.education.institution} (${data.profile.education.university})\nStatus: ${data.profile.education.year}`
+        });
+        break;
+      case 'contact':
+        newHistory.push({
+          type: 'sys',
+          text: `Email: ${data.profile.email}\nGitHub: ${data.profile.github}\nLinkedIn: ${data.profile.linkedin}`
+        });
+        break;
+      case 'clear':
+        setTerminalHistory([]);
+        setTerminalInput('');
+        return;
+      default:
+        newHistory.push({ type: 'sys', text: `Command not recognized: '${cmd}'. Type "help" for assistance.` });
+    }
+    setTerminalHistory(newHistory);
+    setTerminalInput('');
+  };
+  const handleExportJSON = () => {
+    const jsonStr = JSON.stringify(data, null, 2);
+    const blob = new Blob([jsonStr], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `aaditya_raj_portfolio_config.json`;
+    link.click();
+  };
+  const handleImportJSON = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (evt) => {
+        try {
+          const parsed = JSON.parse(evt.target.result);
+          setData(parsed);
+          alert('Portfolio data successfully imported!');
+        } catch (err) {
+          alert('Invalid JSON configuration file.');
+        }
+      };
+      reader.readAsText(file);
+    }
+  };
